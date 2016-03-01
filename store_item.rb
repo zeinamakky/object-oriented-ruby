@@ -19,6 +19,9 @@ class Tea
   end
  
   def print_info
+    if @price == nil
+      @price = 10
+    end
     puts "I am selling #{@variety} tea by #{@brand} for $#{@price}"
   end
 
@@ -30,10 +33,14 @@ end
 tea1 = Tea.new(variety: "Earl Grey", price: 3, brand: "Ahmad")
 tea2 = Tea.new(variety: "Irish Breakfast", price: 4, brand: "Twinnings")
 tea3 = Tea.new(:variety => "Jasmine Green", :price => 6, :brand => "Teavana")
+tea4 = Tea.new(variety: "Pureh", brand: "Rishi")
 
+tea4.print_info
+puts " "
 tea1.print_info
 puts tea2.variety
-puts tea3.brand
+puts "No more #{tea3.brand} for you!"
 puts tea2.price
 tea2.increase_price
 puts "well now you have to pay #{tea2.price}, sucker"
+
